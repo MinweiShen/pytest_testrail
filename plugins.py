@@ -109,6 +109,7 @@ class TestRailPlugin():
             if tid not in self.cases:
                 pytest.skip('skip')
 
+    @pytest.hookimpl(trylast=True)
     def pytest_sessionfinish(self, session, exitstatus):
         """ Submit results after session
         """
